@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giarma Properti - Jual & Sewa Rumah, Ruko, Tanah, Gudang</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        navy: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .bg-hero {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Top Header Bar -->
+    <div class="bg-navy-950 text-slate-300 text-xs py-2 px-4 sm:px-8 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <span><i class="fa-solid fa-phone text-brand-500 mr-2"></i>+62 812-3456-7890</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-envelope text-brand-500 mr-2"></i>info@giarmaproperti.com</span>
+                <span class="hidden sm:inline"><i class="fa-solid fa-location-dot text-brand-500 mr-2"></i>Jakarta & Tangsel</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-brand-500 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-brand-500 transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-brand-500 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:bg-brand-700 transition-colors">
+                        <i class="fa-solid fa-building-circle-check text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black tracking-tight text-navy-900 block leading-none">GIARMA</span>
+                        <span class="text-xs font-semibold text-brand-600 tracking-widest uppercase">PROPERTI</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex items-center space-x-8 font-medium text-slate-600">
+                    <a href="#beranda" class="hover:text-brand-600 transition-colors text-brand-600 font-semibold">Beranda</a>
+                    <a href="#properti" class="hover:text-brand-600 transition-colors">Properti</a>
+                    <a href="#kategori" class="hover:text-brand-600 transition-colors">Kategori</a>
+                    <a href="#simulasi-kpr" class="hover:text-brand-600 transition-colors">Simulasi KPR</a>
+                    <a href="#layanan" class="hover:text-brand-600 transition-colors">Layanan</a>
+                    <a href="#kontak" class="hover:text-brand-600 transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Action CTA -->
+                <div class="hidden lg:flex items-center space-x-3">
+                    <button onclick="openListingModal()" class="px-4 py-2.5 rounded-xl border border-brand-600 text-brand-600 font-semibold hover:bg-brand-50 transition-colors text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-plus-circle"></i> Titip Jual / Sewa
+                    </button>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Giarma%20Properti,%20saya%20ingin%20konsultasi%20properti" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-all shadow-md shadow-brand-600/30 text-sm flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Hubungi Kami
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#beranda" class="block px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-slate-100">Beranda</a>
+            <a href="#properti" class="block px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-slate-100">Katalog Properti</a>
+            <a href="#kategori" class="block px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-slate-100">Kategori</a>
+            <a href="#simulasi-kpr" class="block px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-slate-100">Simulasi KPR</a>
+            <a href="#layanan" class="block px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-slate-100">Layanan</a>
+            <a href="#kontak" class="block px-3 py-2 rounded-lg font-medium text-slate-700 hover:bg-slate-100">Kontak</a>
+            <div class="pt-4 border-t border-slate-100 flex flex-col space-y-2">
+                <button onclick="openListingModal()" class="w-full text-center px-4 py-2.5 rounded-xl border border-brand-600 text-brand-600 font-semibold hover:bg-brand-50">
+                    Titip Jual / Sewa
+                </button>
+                <a href="https://wa.me/6281234567890?text=Halo%20Giarma%20Properti,%20saya%20ingin%20konsultasi%20properti" target="_blank" class="w-full text-center px-4 py-2.5 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-700">
+                    <i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="bg-hero min-h-[580px] lg:min-h-[640px] flex items-center justify-center relative px-4 py-16">
+        <div class="max-w-5xl mx-auto w-full text-center text-white">
+            <span class="inline-block py-1 px-4 rounded-full bg-brand-500/20 backdrop-blur-md border border-brand-400/30 text-brand-300 text-xs font-semibold uppercase tracking-widest mb-4">
+                Agen Properti Terpercaya & Profesional
+            </span>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-4">
+                Temukan Properti Impian <br class="hidden sm:inline"><span class="text-brand-400">Dijual & Disewa</span> Dengan Mudah
+            </h1>
+            <p class="text-slate-300 text-sm sm:text-lg max-w-2xl mx-auto mb-10 font-normal">
+                Giarma Properti menyediakan pilihan **Rumah, Ruko, Tanah,** dan **Gudang** terbaik di lokasi strategis dengan legalitas aman dan transaksi transparan.
+            </p>
+
+            <!-- Interactive Search Box Filter -->
+            <div class="bg-white/95 backdrop-blur-xl p-4 sm:p-6 rounded-2xl shadow-2xl text-slate-800 text-left border border-white/20">
+                <!-- Status Tab Buttons -->
+                <div class="flex space-x-2 border-b border-slate-200 pb-3 mb-4">
+                    <button type="button" onclick="setHeroStatus('semua')" id="heroTabSemua" class="hero-tab active font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg bg-brand-600 text-white transition-all">Semua Status</button>
+                    <button type="button" onclick="setHeroStatus('dijual')" id="heroTabDijual" class="hero-tab font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">Dijual</button>
+                    <button type="button" onclick="setHeroStatus('disewa')" id="heroTabDisewa" class="hero-tab font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all">Disewa</button>
+                </div>
+
+                <!-- Form Controls Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+                    <!-- Keyword Search -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 mb-1 uppercase tracking-wider">Kata Kunci / Lokasi</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400"></i>
+                            <input type="text" id="searchKeyword" placeholder="Cari area, BSD, Jakarta..." class="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500 text-sm bg-slate-50">
+                        </div>
+                    </div>
+
+                    <!-- Category Dropdown -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 mb-1 uppercase tracking-wider">Tipe Properti</label>
+                        <select id="searchCategory" class="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500 text-sm bg-slate-50">
+                            <option value="semua">Semua Tipe (Rumah, Ruko...)</option>
+                            <option value="rumah">Rumah</option>
+                            <option value="ruko">Ruko</option>
+                            <option value="tanah">Tanah</option>
+                            <option value="gudang">Gudang</option>
+                        </select>
+                    </div>
+
+                    <!-- Location Dropdown -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 mb-1 uppercase tracking-wider">Wilayah</label>
+                        <select id="searchLocation" class="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500 text-sm bg-slate-50">
+                            <option value="semua">Semua Wilayah</option>
+                            <option value="Jakarta">Jakarta</option>
+                            <option value="Tangerang">Tangerang & Tangsel</option>
+                            <option value="Bogor">Bogor</option>
+                            <option value="Bekasi">Bekasi</option>
+                            <option value="Surabaya">Surabaya</option>
+                        </select>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 mb-1 uppercase tracking-wider">Maksimal Harga</label>
+                        <select id="searchPrice" class="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-500 text-sm bg-slate-50">
+                            <option value="semua">Bebas Rentang Harga</option>
+                            <option value="1000000000">&lt; Rp 1 Miliar</option>
+                            <option value="3000000000">&lt; Rp 3 Miliar</option>
+                            <option value="5000000000">&lt; Rp 5 Miliar</option>
+                            <option value="10000000000">&lt; Rp 10 Miliar</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Search Button -->
+                <button onclick="applyFilters()" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-brand-600/30 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-filter"></i> Cari Properti Sesuai Filter
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Quick Grid Section -->
+    <section id="kategori" class="py-12 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-xs font-bold text-brand-600 uppercase tracking-widest mb-1">Kategori Utama</h2>
+                <p class="text-2xl sm:text-3xl font-extrabold text-navy-900">Pilih Jenis Properti Yang Anda Cari</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                <!-- Rumah -->
+                <div onclick="filterByCategory('rumah')" class="cursor-pointer group p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-500 hover:bg-white hover:shadow-xl transition-all text-center">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center text-2xl group-hover:bg-brand-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h3 class="font-bold text-navy-900 text-lg mb-1">Rumah</h3>
+                    <p class="text-xs text-slate-500">Hunian Nyaman & Minimalis</p>
+                </div>
+
+                <!-- Ruko -->
+                <div onclick="filterByCategory('ruko')" class="cursor-pointer group p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-500 hover:bg-white hover:shadow-xl transition-all text-center">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl group-hover:bg-amber-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <h3 class="font-bold text-navy-900 text-lg mb-1">Ruko</h3>
+                    <p class="text-xs text-slate-500">Ruang Usaha Strategis</p>
+                </div>
+
+                <!-- Tanah -->
+                <div onclick="filterByCategory('tanah')" class="cursor-pointer group p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-500 hover:bg-white hover:shadow-xl transition-all text-center">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3 class="font-bold text-navy-900 text-lg mb-1">Tanah</h3>
+                    <p class="text-xs text-slate-500">Kavling Investasi Masadepan</p>
+                </div>
+
+                <!-- Gudang -->
+                <div onclick="filterByCategory('gudang')" class="cursor-pointer group p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-brand-500 hover:bg-white hover:shadow-xl transition-all text-center">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+                    <h3 class="font-bold text-navy-900 text-lg mb-1">Gudang</h3>
+                    <p class="text-xs text-slate-500">Fasilitas Logistik & Industri</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Listing Section -->
+    <section id="properti" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <h2 class="text-xs font-bold text-brand-600 uppercase tracking-widest mb-1">Pilihan Terbaik</h2>
+                    <h3 class="text-3xl font-extrabold text-navy-900">Katalog Properti Terbaru</h3>
+                </div>
+
+                <!-- Filter Quick Buttons -->
+                <div class="mt-4 md:mt-0 flex flex-wrap gap-2">
+                    <button onclick="quickFilterType('semua')" id="btnFilterSemua" class="type-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-brand-600 text-white shadow-sm">Semua</button>
+                    <button onclick="quickFilterType('rumah')" id="btnFilterRumah" class="type-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-100">Rumah</button>
+                    <button onclick="quickFilterType('ruko')" id="btnFilterRuko" class="type-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-100">Ruko</button>
+                    <button onclick="quickFilterType('tanah')" id="btnFilterTanah" class="type-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-100">Tanah</button>
+                    <button onclick="quickFilterType('gudang')" id="btnFilterGudang" class="type-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-100">Gudang</button>
+                </div>
+            </div>
+
+            <!-- Property Cards Grid -->
+            <div id="propertyGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- JS dynamic injection here -->
+            </div>
+
+            <!-- Empty state indicator -->
+            <div id="emptyState" class="hidden text-center py-16">
+                <i class="fa-solid fa-building-circle-xmark text-5xl text-slate-300 mb-3"></i>
+                <h4 class="text-lg font-bold text-slate-700">Properti Tidak Ditemukan</h4>
+                <p class="text-sm text-slate-500">Coba ubah kata kunci atau kriteria pencarian Anda.</p>
+                <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-brand-600 text-white font-semibold rounded-xl text-sm">Reset Semua Filter</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- KPR Calculator Section -->
+    <section id="simulasi-kpr" class="py-16 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <!-- Left Intro -->
+                <div class="lg:col-span-5">
+                    <span class="inline-block py-1 px-3 rounded-md bg-brand-100 text-brand-700 font-bold text-xs uppercase mb-3">Kalkulator Finansial</span>
+                    <h2 class="text-3xl font-extrabold text-navy-900 mb-4 leading-tight">Simulasi Angsuran KPR & Pinjaman Properti</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        Hitung estimasi cicilan bulanan Anda sebelum memutuskan untuk membeli properti idaman. Tim Giarma Properti juga siap membantu pengajuan KPR Anda ke berbagai bank rekanan terpercaya.
+                    </p>
+                    <div class="space-y-3 text-xs sm:text-sm text-slate-700">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-600 text-lg"></i>
+                            <span>Proses pengajuan KPR didampingi tim ahli</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-600 text-lg"></i>
+                            <span>Bekerja sama dengan 10+ Bank BUMN & Swasta</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-600 text-lg"></i>
+                            <span>Suku bunga kompetitif & transparan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Calculator Card -->
+                <div class="lg:col-span-7 bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xl">
+                    <form id="kprForm" onsubmit="event.preventDefault(); calculateKPR();">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                            <!-- Property Price -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Harga Properti (Rp)</label>
+                                <input type="number" id="kprHarga" value="1200000000" class="w-full p-3 rounded-xl border border-slate-200 text-sm font-semibold focus:border-brand-500 focus:outline-none">
+                            </div>
+
+                            <!-- Down Payment (DP %) -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Uang Muka / DP (%)</label>
+                                <input type="number" id="kprDpPercent" value="20" min="0" max="90" class="w-full p-3 rounded-xl border border-slate-200 text-sm font-semibold focus:border-brand-500 focus:outline-none">
+                            </div>
+
+                            <!-- Interest Rate -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Bunga Pertahun (%)</label>
+                                <input type="number" step="0.1" id="kprBunga" value="7.5" class="w-full p-3 rounded-xl border border-slate-200 text-sm font-semibold focus:border-brand-500 focus:outline-none">
+                            </div>
+
+                            <!-- Tenor -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Jangka Waktu (Tahun)</label>
+                                <select id="kprTenor" class="w-full p-3 rounded-xl border border-slate-200 text-sm font-semibold focus:border-brand-500 focus:outline-none">
+                                    <option value="5">5 Tahun</option>
+                                    <option value="10">10 Tahun</option>
+                                    <option value="15" selected>15 Tahun</option>
+                                    <option value="20">20 Tahun</option>
+                                    <option value="25">25 Tahun</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-navy-900 hover:bg-slate-800 text-white font-bold py-3 rounded-xl transition-colors text-sm mb-6">
+                            Hitung Estimasi Cicilan
+                        </button>
+                    </form>
+
+                    <!-- Calculator Results Box -->
+                    <div class="bg-brand-900 text-white p-5 rounded-2xl space-y-3">
+                        <div class="flex justify-between items-center border-b border-brand-800 pb-3">
+                            <span class="text-xs text-brand-200">Estimasi Cicilan Per Bulan</span>
+                            <span id="resCicilan" class="text-xl sm:text-2xl font-black text-brand-400">Rp 8.910.000</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 text-xs pt-1">
+                            <div>
+                                <p class="text-brand-300">Uang Muka (DP):</p>
+                                <p id="resDpNominal" class="font-bold text-sm text-white">Rp 240.000.000</p>
+                            </div>
+                            <div>
+                                <p class="text-brand-300">Plafon Pinjaman:</p>
+                                <p id="resPlafon" class="font-bold text-sm text-white">Rp 960.000.000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="layanan" class="py-16 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-400 font-bold text-xs uppercase tracking-widest">Keunggulan Layanan</span>
+                <h2 class="text-3xl font-extrabold mt-1">Mengapa Memilih Giarma Properti?</h2>
+                <p class="text-slate-400 text-sm mt-2">Kami menawarkan solusi lengkap jual, beli, dan sewa properti komersial maupun residensial.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-slate-800/60 p-8 rounded-2xl border border-slate-700/50 hover:border-brand-500 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Legalitas Aman</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Pemeriksaan keabsahan Sertifikat (SHM, HGB), IMB/PBG, dan pajak properti dilakukan dengan ketat bersama Notaris/PPAT terpercaya.
+                    </p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-slate-800/60 p-8 rounded-2xl border border-slate-700/50 hover:border-brand-500 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Pemasaran Luas</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Aset rumah, ruko, tanah, atau gudang Anda dipasarkan melalui jaringan digital terdepan untuk mempercepat transaksi.
+                    </p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-slate-800/60 p-8 rounded-2xl border border-slate-700/50 hover:border-brand-500 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Negosiasi Transparan</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Kami menjembatani pertemuan pemilik dan pembeli/penyewa secara jujur demi kesepakatan harga terbaik bagi kedua belah pihak.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact info -->
+                <div>
+                    <span class="text-brand-600 font-bold text-xs uppercase tracking-widest">Hubungi Agen</span>
+                    <h2 class="text-3xl font-extrabold text-navy-900 mt-1 mb-4">Siap Membantu Kebutuhan Properti Anda</h2>
+                    <p class="text-slate-600 text-sm mb-8 leading-relaxed">
+                        Apakah Anda ingin mencari tempat tinggal, ruang kantor ruko, investasi tanah, ataupun penyewaan gudang? Tim Marketing Giarma Properti siap merespon pertanyaan Anda secara profesional.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm">Kantor Pemasaran</h4>
+                                <p class="text-xs text-slate-500">Jl. Bintaro Utama Sektor 3A, Tangsel, Banten 15221</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm">Telepon & WhatsApp</h4>
+                                <p class="text-xs text-slate-500">+62 812-3456-7890 / +62 857-1122-3344</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm">Jam Operasional</h4>
+                                <p class="text-xs text-slate-500">Senin - Sabtu: 08.00 - 18.00 WIB (Minggu By Appointment)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Direct Message -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200">
+                    <h3 class="text-lg font-bold text-navy-900 mb-4">Kirim Pesan Langsung</h3>
+                    <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Nama Lengkap</label>
+                            <input type="text" required id="contactName" placeholder="Masukkan nama Anda" class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-brand-500 bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp</label>
+                            <input type="tel" required id="contactPhone" placeholder="0812xxxx" class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-brand-500 bg-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Minat Properti</label>
+                            <select id="contactInterest" class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-brand-500 bg-white">
+                                <option>Membeli Rumah</option>
+                                <option>Sewa Rumah</option>
+                                <option>Beli / Sewa Ruko</option>
+                                <option>Beli Tanah Kavling</option>
+                                <option>Sewa / Beli Gudang</option>
+                                <option>Lainnya</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Pesan / Pertanyaan</label>
+                            <textarea id="contactMessage" rows="3" placeholder="Tuliskan pesan Anda..." class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-brand-500 bg-white"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-md transition-all text-sm">
+                            <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Kirim Via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 text-slate-400 text-sm py-12 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white">
+                            <i class="fa-solid fa-building-circle-check"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white">GIARMA</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Platform jual & sewa properti terpercaya untuk rumah hunian, ruko bisnis, tanah kavling, dan gudang operasional.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Tipe Properti</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#properti" onclick="quickFilterType('rumah')" class="hover:text-white transition-colors">Rumah Dijual & Sewa</a></li>
+                        <li><a href="#properti" onclick="quickFilterType('ruko')" class="hover:text-white transition-colors">Ruko & Komersial</a></li>
+                        <li><a href="#properti" onclick="quickFilterType('tanah')" class="hover:text-white transition-colors">Tanah Kavling</a></li>
+                        <li><a href="#properti" onclick="quickFilterType('gudang')" class="hover:text-white transition-colors">Gudang Industri</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#beranda" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#simulasi-kpr" class="hover:text-white transition-colors">Simulasi KPR</a></li>
+                        <li><a href="#layanan" class="hover:text-white transition-colors">Layanan Kami</a></li>
+                        <li><a href="#" onclick="openListingModal(); return false;" class="hover:text-white transition-colors">Titip Properti</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Sertifikasi & Partner</h4>
+                    <p class="text-xs text-slate-400 mb-3">Bekerja sama dengan berbagai konsultan properti dan jaringan perbankan resmi.</p>
+                    <div class="flex gap-2 text-xl text-slate-500">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <i class="fa-solid fa-landmark"></i>
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-6 border-t border-slate-800 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2">
+                <p>&copy; 2026 Giarma Properti. All rights reserved.</p>
+                <p>Website Properti Resmi - Rumah | Ruko | Tanah | Gudang</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Property Detail Modal -->
+    <div id="propertyModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative animate-fadeIn">
+            <!-- Modal Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-slate-900/60 text-white hover:bg-slate-900 flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div id="modalContent">
+                <!-- Injected dynamically via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Titip Jual / Sewa Modal -->
+    <div id="listingModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative">
+            <button onclick="closeListingModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            
+            <h3 class="text-2xl font-bold text-navy-900 mb-2">Form Titip Jual / Sewa</h3>
+            <p class="text-xs text-slate-500 mb-6">Isi data properti Anda, tim Giarma Properti akan segera menghubungi Anda untuk verifikasi lokasi.</p>
+
+            <form onsubmit="handleListingSubmit(event)" class="space-y-4 text-left">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nama Pemilik Properti</label>
+                    <input type="text" id="ownerName" required placeholder="Nama Anda" class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-brand-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp / HP</label>
+                    <input type="tel" id="ownerPhone" required placeholder="0812xxxx" class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-brand-500">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Jenis Properti</label>
+                        <select id="ownerPropType" class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-brand-500">
+                            <option value="Rumah">Rumah</option>
+                            <option value="Ruko">Ruko</option>
+                            <option value="Tanah">Tanah</option>
+                            <option value="Gudang">Gudang</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Rencana Transaksi</label>
+                        <select id="ownerAction" class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-brand-500">
+                            <option value="Dijual">Dijual</option>
+                            <option value="Disewakan">Disewakan</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Lokasi Singkat & Luas (LT/LB)</label>
+                    <input type="text" id="ownerPropDetails" required placeholder="Contoh: BSD Serpong, LT 120m, LB 90m" class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-brand-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Ekspektasi Harga (Rp)</label>
+                    <input type="text" id="ownerPrice" placeholder="Contoh: 1.5 Miliar" class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-brand-500">
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl text-sm transition-all shadow-lg shadow-brand-600/30">
+                    <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Kirim Data Ke WhatsApp Agent
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const propertiesData = [
+            {
+                id: 1,
+                title: "Rumah Minimalis Modern BSD City",
+                type: "rumah",
+                status: "dijual",
+                price: "Rp 1.850.000.000",
+                rawPrice: 1850000000,
+                location: "Tangerang",
+                address: "Cluster Tabebuya, BSD City, Tangerang Selatan",
+                bed: 3,
+                bath: 2,
+                lt: 105,
+                lb: 85,
+                image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+                description: "Rumah siap huni dengan konsep smart home di kawasan BSD City. Akses dekat ke jalan tol, AEON Mall, dan fasilitas umum terintegrasi.",
+                featured: true
+            },
+            {
+                id: 2,
+                title: "Ruko Komersial 3 Lantai Strategis",
+                type: "ruko",
+                status: "disewa",
+                price: "Rp 120.000.000 / Tahun",
+                rawPrice: 120000000,
+                location: "Jakarta",
+                address: "Jl. Raya Boulevard Barat, Kelapa Gading, Jakarta Utara",
+                bed: 0,
+                bath: 3,
+                lt: 75,
+                lb: 210,
+                image: "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=800&q=80",
+                description: "Ruko komersial di pinggir jalan utama lalu lintas ramai. Cocok untuk kantor perbankan, minimarket, cafe, maupun klinik kecantikan.",
+                featured: true
+            },
+            {
+                id: 3,
+                title: "Tanah Kavling Siap Bangun Bintaro",
+                type: "tanah",
+                status: "dijual",
+                price: "Rp 2.400.000.000",
+                rawPrice: 2400000000,
+                location: "Tangerang",
+                address: "Bintaro Sektor 9, Tangerang Selatan",
+                bed: 0,
+                bath: 0,
+                lt: 300,
+                lb: 0,
+                image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80",
+                description: "Tanah bentuk persegi siap bangun rumah mewah. Lingkungan tenang, bebas banjir, sertifikat SHM bersih aman legalitas lengkap.",
+                featured: false
+            },
+            {
+                id: 4,
+                title: "Gudang Modern Kawasan Industri Cikarang",
+                type: "gudang",
+                status: "disewa",
+                price: "Rp 350.000.000 / Tahun",
+                rawPrice: 350000000,
+                location: "Bekasi",
+                address: "Kawasan Industri Jababeka, Cikarang, Bekasi",
+                bed: 0,
+                bath: 2,
+                lt: 1200,
+                lb: 800,
+                image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+                description: "Gudang standar industri lengkap dengan loading dock, kantor pengawas 2 lantai, dan lantai beton kapasitas muatan tinggi.",
+                featured: true
+            },
+            {
+                id: 5,
+                title: "Rumah Mewah Hook Kebayoran Baru",
+                type: "rumah",
+                status: "dijual",
+                price: "Rp 8.500.000.000",
+                rawPrice: 8500000000,
+                location: "Jakarta",
+                address: "Jl. Pakubuwono, Kebayoran Baru, Jakarta Selatan",
+                bed: 5,
+                bath: 4,
+                lt: 350,
+                lb: 420,
+                image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
+                description: "Hunian elit posisi hook dengan kolam renang pribadi, halaman luas, car port 4 mobil, dan keamanan security 24 jam.",
+                featured: true
+            },
+            {
+                id: 6,
+                title: "Sewa Rumah Asri Bogor Nirwana",
+                type: "rumah",
+                status: "disewa",
+                price: "Rp 45.000.000 / Tahun",
+                rawPrice: 45000000,
+                location: "Bogor",
+                address: "Bogor Nirwana Residence, Kota Bogor",
+                bed: 2,
+                bath: 1,
+                lt: 90,
+                lb: 60,
+                image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80",
+                description: "Disewakan rumah nyaman nuansa pegunungan sejuk di Bogor. Perabot semi-furnished, cocok untuk keluarga muda.",
+                featured: false
+            },
+            {
+                id: 7,
+                title: "Gudang Dijual Lokasi Strategis Surabaya",
+                type: "gudang",
+                status: "dijual",
+                price: "Rp 6.200.000.000",
+                rawPrice: 6200000000,
+                location: "Surabaya",
+                address: "Kawasan Industri Margomulyo, Surabaya",
+                bed: 0,
+                bath: 2,
+                lt: 1500,
+                lb: 1000,
+                image: "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80",
+                description: "Gudang dijual murah siap operasional logistik. Akses kontainer 40ft lancar dekat dengan gerbang tol dan pelabuhan.",
+                featured: false
+            },
+            {
+                id: 8,
+                title: "Ruko Usaha Dijual Gading Serpong",
+                type: "ruko",
+                status: "dijual",
+                price: "Rp 3.100.000.000",
+                rawPrice: 3100000000,
+                location: "Tangerang",
+                address: "Ruko Aniva Junction, Gading Serpong, Tangerang",
+                bed: 0,
+                bath: 2,
+                lt: 60,
+                lb: 130,
+                image: "https://images.unsplash.com/photo-1524230507669-5ff97982bb5e?auto=format&fit=crop&w=800&q=80",
+                description: "Ruko modern 2 lantai di pusat kuliner Gading Serpong. Captive market tinggi dikelilingi ribuan perumahan padat.",
+                featured: false
+            }
+        ];
+
+        let currentFilters = {
+            status: 'semua',
+            category: 'semua',
+            location: 'semua',
+            price: 'semua',
+            keyword: ''
+        };
+
+        // Initialize Page
+        window.addEventListener('DOMContentLoaded', () => {
+            renderProperties(propertiesData);
+            calculateKPR();
+
+            // Mobile menu toggle
+            const mobileBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+
+        function renderProperties(list) {
+            const grid = document.getElementById('propertyGrid');
+            const empty = document.getElementById('emptyState');
+            grid.innerHTML = '';
+
+            if (list.length === 0) {
+                grid.classList.add('hidden');
+                empty.classList.remove('hidden');
+                return;
+            }
+
+            grid.classList.remove('hidden');
+            empty.classList.add('hidden');
+
+            list.forEach(item => {
+                const badgeStatusColor = item.status === 'dijual' ? 'bg-emerald-600' : 'bg-blue-600';
+                
+                // Specs builder
+                let specsHtml = '';
+                if (item.type === 'rumah') {
+                    specsHtml = `
+                        <div class="flex items-center gap-1"><i class="fa-solid fa-bed text-brand-600"></i> ${item.bed} KT</div>
+                        <div class="flex items-center gap-1"><i class="fa-solid fa-bath text-brand-600"></i> ${item.bath} KM</div>
+                        <div class="flex items-center gap-1"><i class="fa-solid fa-ruler-combined text-brand-600"></i> ${item.lt}m² LT</div>
+                    `;
+                } else if (item.type === 'ruko') {
+                    specsHtml = `
+                        <div class="flex items-center gap-1"><i class="fa-solid fa-bath text-brand-600"></i> ${item.bath} KM</div>
+                        <div class="flex items-center gap-1"><i class="fa-solid fa-layer-group text-brand-600"></i> LB ${item.lb}m²</div>
+                        <div class="flex items-center gap-1"><i class="fa-solid fa-ruler-combined text-brand-600"></i> LT ${item.lt}m²</div>
+                    `;
+                } else if (item.type === 'tanah') {
+                    specsHtml = `
+                        <div class="flex items-center gap-1"><i class="fa-solid fa-vector-square text-brand-600"></i> LT ${item.lt} m²</div>
+                        <div class="flex items-center gap-1"><i class="fa-solid fa-file-certificate text-brand-600"></i> SHM</div>
+                    `;
+                } else if (item.type === 'gudang') {
+                    specsHtml = `
+                        <div class="flex items-center gap-1"><i class="fa-solid fa-ruler-combined text-brand-600"></i> LB ${item.lb}m²</div>
+                        <div class="flex items-center gap-1"><i class="fa-solid fa-truck-ramp-box text-brand-600"></i> Loading Dock</div>
+                    `;
+                }
+
+                const card = `
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-slate-100 flex flex-col group">
+                        <!-- Image Container -->
+                        <div class="relative overflow-hidden h-56 bg-slate-200">
+                            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <!-- Status Badge -->
+                            <span class="absolute top-4 left-4 ${badgeStatusColor} text-white text-xs font-black uppercase px-3 py-1 rounded-full shadow-md">
+                                ${item.status.toUpperCase()}
+                            </span>
+                            <!-- Type Badge -->
+                            <span class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-white text-xs font-semibold uppercase px-3 py-1 rounded-full">
+                                ${item.type.toUpperCase()}
+                            </span>
+                        </div>
+
+                        <!-- Card Content -->
+                        <div class="p-6 flex-1 flex flex-col justify-between">
+                            <div>
+                                <p class="text-brand-600 font-extrabold text-lg sm:text-xl mb-1">${item.price}</p>
+                                <h3 class="font-bold text-navy-900 text-base mb-2 group-hover:text-brand-600 transition-colors line-clamp-1">${item.title}</h3>
+                                <p class="text-xs text-slate-500 mb-4 flex items-center gap-1">
+                                    <i class="fa-solid fa-location-dot text-slate-400"></i> ${item.address}
+                                </p>
+                                
+                                <!-- Specs -->
+                                <div class="flex items-center justify-between text-xs text-slate-600 font-medium py-3 border-y border-slate-100 mb-4">
+                                    ${specsHtml}
+                                </div>
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="grid grid-cols-2 gap-2 mt-2">
+                                <button onclick="openModal(${item.id})" class="py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs text-center transition-colors">
+                                    Detail Properti
+                                </button>
+                                <a href="https://wa.me/6281234567890?text=Halo%20Giarma%20Properti,%20saya%20tertarik%20dengan%20${encodeURIComponent(item.title)}" target="_blank" class="py-2.5 px-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-xs text-center transition-colors flex items-center justify-center gap-1">
+                                    <i class="fa-brands fa-whatsapp text-sm"></i> Tanya WA
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        function setHeroStatus(status) {
+            currentFilters.status = status;
+            document.querySelectorAll('.hero-tab').forEach(btn => {
+                btn.classList.remove('bg-brand-600', 'text-white');
+                btn.classList.add('bg-slate-100', 'text-slate-600');
+            });
+            
+            if(status === 'semua') document.getElementById('heroTabSemua').className = 'hero-tab active font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg bg-brand-600 text-white transition-all';
+            if(status === 'dijual') document.getElementById('heroTabDijual').className = 'hero-tab active font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg bg-brand-600 text-white transition-all';
+            if(status === 'disewa') document.getElementById('heroTabDisewa').className = 'hero-tab active font-semibold text-xs sm:text-sm px-4 py-2 rounded-lg bg-brand-600 text-white transition-all';
+
+            applyFilters();
+        }
+
+        function applyFilters() {
+            currentFilters.keyword = document.getElementById('searchKeyword').value.toLowerCase();
+            currentFilters.category = document.getElementById('searchCategory').value;
+            currentFilters.location = document.getElementById('searchLocation').value;
+            currentFilters.price = document.getElementById('searchPrice').value;
+
+            let filtered = propertiesData.filter(item => {
+                // Status match
+                if (currentFilters.status !== 'semua' && item.status !== currentFilters.status) return false;
+                
+                // Category match
+                if (currentFilters.category !== 'semua' && item.type !== currentFilters.category) return false;
+                
+                // Location match
+                if (currentFilters.location !== 'semua' && item.location !== currentFilters.location) return false;
+                
+                // Price match
+                if (currentFilters.price !== 'semua' && item.rawPrice > parseInt(currentFilters.price)) return false;
+
+                // Keyword match
+                if (currentFilters.keyword !== '') {
+                    const matchTitle = item.title.toLowerCase().includes(currentFilters.keyword);
+                    const matchAddress = item.address.toLowerCase().includes(currentFilters.keyword);
+                    if (!matchTitle && !matchAddress) return false;
+                }
+
+                return true;
+            });
+
+            renderProperties(filtered);
+            
+            // Scroll down to properties section smoothly
+            const target = document.getElementById('properti');
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function filterByCategory(type) {
+            document.getElementById('searchCategory').value = type;
+            quickFilterType(type);
+        }
+
+        function quickFilterType(type) {
+            currentFilters.category = type;
+            
+            // Update filter buttons UI
+            document.querySelectorAll('.type-filter-btn').forEach(btn => {
+                btn.className = 'type-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-100';
+            });
+
+            if (type === 'semua') document.getElementById('btnFilterSemua').className = 'type-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-brand-600 text-white shadow-sm';
+            if (type === 'rumah') document.getElementById('btnFilterRumah').className = 'type-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-brand-600 text-white shadow-sm';
+            if (type === 'ruko') document.getElementById('btnFilterRuko').className = 'type-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-brand-600 text-white shadow-sm';
+            if (type === 'tanah') document.getElementById('btnFilterTanah').className = 'type-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-brand-600 text-white shadow-sm';
+            if (type === 'gudang') document.getElementById('btnFilterGudang').className = 'type-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-brand-600 text-white shadow-sm';
+
+            applyFilters();
+        }
+
+        function resetFilters() {
+            document.getElementById('searchKeyword').value = '';
+            document.getElementById('searchCategory').value = 'semua';
+            document.getElementById('searchLocation').value = 'semua';
+            document.getElementById('searchPrice').value = 'semua';
+            currentFilters = { status: 'semua', category: 'semua', location: 'semua', price: 'semua', keyword: '' };
+            setHeroStatus('semua');
+            quickFilterType('semua');
+        }
+
+        function calculateKPR() {
+            const harga = parseFloat(document.getElementById('kprHarga').value) || 0;
+            const dpPercent = parseFloat(document.getElementById('kprDpPercent').value) || 0;
+            const bungaAnual = parseFloat(document.getElementById('kprBunga').value) || 0;
+            const tenorTahun = parseInt(document.getElementById('kprTenor').value) || 15;
+
+            const dpNominal = (dpPercent / 100) * harga;
+            const plafon = harga - dpNominal;
+            const totalBulan = tenorTahun * 12;
+            const bungaBulan = (bungaAnual / 100) / 12;
+
+            let cicilanPerBulan = 0;
+            if (bungaBulan > 0) {
+                cicilanPerBulan = (plafon * bungaBulan * Math.pow(1 + bungaBulan, totalBulan)) / (Math.pow(1 + bungaBulan, totalBulan) - 1);
+            } else {
+                cicilanPerBulan = plafon / totalBulan;
+            }
+
+            // Formatting currency IDR
+            const formatRupiah = (num) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
+
+            document.getElementById('resCicilan').innerText = formatRupiah(cicilanPerBulan);
+            document.getElementById('resDpNominal').innerText = formatRupiah(dpNominal);
+            document.getElementById('resPlafon').innerText = formatRupiah(plafon);
+        }
+
+        function openModal(id) {
+            const item = propertiesData.find(p => p.id === id);
+            if (!item) return;
+
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = `
+                <div class="relative h-72 sm:h-96 bg-slate-900">
+                    <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
+                    <div class="absolute bottom-4 left-4 flex gap-2">
+                        <span class="bg-brand-600 text-white font-bold text-xs uppercase px-3 py-1 rounded-full shadow">${item.status.toUpperCase()}</span>
+                        <span class="bg-navy-900/90 text-white font-bold text-xs uppercase px-3 py-1 rounded-full">${item.type.toUpperCase()}</span>
+                    </div>
+                </div>
+
+                <div class="p-6 sm:p-8 space-y-6">
+                    <div>
+                        <span class="text-2xl sm:text-3xl font-black text-brand-600 block mb-1">${item.price}</span>
+                        <h2 class="text-2xl font-bold text-navy-900 mb-2">${item.title}</h2>
+                        <p class="text-slate-500 text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-brand-600"></i> ${item.address}
+                        </p>
+                    </div>
+
+                    <!-- Detailed Specifications Box -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                        <div>
+                            <p class="text-xs text-slate-400">Luas Tanah</p>
+                            <p class="font-bold text-navy-900 text-sm sm:text-base">${item.lt} m²</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400">Luas Bangunan</p>
+                            <p class="font-bold text-navy-900 text-sm sm:text-base">${item.lb ? item.lb + ' m²' : '-'}</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400">Kamar Tidur</p>
+                            <p class="font-bold text-navy-900 text-sm sm:text-base">${item.bed || '-'}</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400">Kamar Mandi</p>
+                            <p class="font-bold text-navy-900 text-sm sm:text-base">${item.bath || '-'}</p>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div>
+                        <h4 class="font-bold text-navy-900 text-sm mb-2">Deskripsi Properti</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">${item.description}</p>
+                    </div>
+
+                    <!-- Key Features -->
+                    <div>
+                        <h4 class="font-bold text-navy-900 text-sm mb-2">Fasilitas Utama</h4>
+                        <div class="grid grid-cols-2 gap-2 text-xs text-slate-600">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Sertifikat Resmi (SHM/HGB)</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Akses Jalan Mobil Dual Line</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Bebas Banjir</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Sambungan Listrik & Air Lengkap</div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Agent Callout -->
+                    <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row gap-3 items-center justify-between">
+                        <div>
+                            <p class="text-xs text-slate-400">Tertarik dengan properti ini?</p>
+                            <p class="font-bold text-navy-900 text-sm">Hubungi Marketing Giarma Properti</p>
+                        </div>
+                        <a href="https://wa.me/6281234567890?text=Halo%20Giarma%20Properti,%20saya%20tertarik%20dengan%20properti%20ID%20${item.id}%20-${encodeURIComponent(item.title)}" target="_blank" class="w-full sm:w-auto px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl text-sm transition-all shadow-md flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Chat Agent WhatsApp
+                        </a>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('propertyModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('propertyModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function openListingModal() {
+            document.getElementById('listingModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeListingModal() {
+            document.getElementById('listingModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleListingSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('ownerName').value;
+            const phone = document.getElementById('ownerPhone').value;
+            const type = document.getElementById('ownerPropType').value;
+            const action = document.getElementById('ownerAction').value;
+            const details = document.getElementById('ownerPropDetails').value;
+            const price = document.getElementById('ownerPrice').value;
+
+            const text = `Halo%20Giarma%20Properti,%20Saya%20ingin%20Titip%20Properti:%0A%0A- Nama: ${encodeURIComponent(name)}%0A- No HP: ${encodeURIComponent(phone)}%0A- Jenis: ${encodeURIComponent(type)}%0A- Status: ${encodeURIComponent(action)}%0A- Detail/Lokasi: ${encodeURIComponent(details)}%0A- Harga: ${encodeURIComponent(price)}`;
+            
+            window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+            closeListingModal();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('contactName').value;
+            const phone = document.getElementById('contactPhone').value;
+            const interest = document.getElementById('contactInterest').value;
+            const message = document.getElementById('contactMessage').value;
+
+            const text = `Halo%20Giarma%20Properti,%20saya%20${encodeURIComponent(name)}%20(${encodeURIComponent(phone)}).%0AMinat: ${encodeURIComponent(interest)}.%0A%0APesan: ${encodeURIComponent(message)}`;
+            
+            window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+        }
+    </script>
+</body>
+</html>
